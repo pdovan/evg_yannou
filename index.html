@@ -6,7 +6,7 @@
     <title>Planning EVG</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', cursive;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
@@ -104,6 +104,57 @@
             position: relative;
             width: 100%;
         }
+
+	.guests-box {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.guests-box h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.guests-box p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.guests-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.guests-list span {
+    background: white;
+    color: #0056b3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .planning {
+        font-size: 12px;
+    }
+    .gallery img {
+        width: 100%;
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -111,6 +162,26 @@
         <h1>Planning de l'EVG de Yannou</h1>
         <p>Le programme des festivités du Vendredi 30 Mai au 01 Juin</p>
     </header>
+
+<div class="guests-box">
+    <h3>🎉 Invités 🎉</h3>
+    <p>Les participants à cet EVG :</p>
+    <div class="guests-list">
+        <span>Yannou (Le futur marié)</span>
+        <span>Benjamin</span>
+        <span>Christophe</span>
+        <span>Freddy</span>
+        <span>Greg</span>
+        <span>Lassad</span>
+        <span>Sébastien</span>
+        <span>Marc</span>
+        <span>Pascal</span>
+        <span>Patrick R.</span>
+        <span>Karim</span>
+        <span>Patrick D.</span>
+    </div>
+</div>
+
     <div class="container">
         <h2>Vendredi 30 Mai</h2>
 
@@ -142,21 +213,21 @@
                 <tr>
                     <td>17:00</td>
                     <td class="activity">Karting Mario Kart</td>
-                    <td><a href="https://www.battlekart.com/fr/evg-evjf/" target="_blank">Battle Kart</a></td>
+                    <td><a href="https://www.battlekart.com/fr/evg-evjf/" target="_blank">Battle Kart</a><br> Réserver une session via le site</td>
                     <td>1h</td>
                     <td> 22€ </td>
                 </tr>
                 <tr>
                     <td>19:00</td>
                     <td class="activity">Bar</td>
-                    <td><a href="https://www.thesneakers.tv/" target="_blank">Bar - The Sneakers Cafe</a></td>
+                    <td><a href="https://www.thesneakers.tv/" target="_blank">Bar - The Sneakers Cafe</a><br> Demande de résa effectuée</td>
                     <td>1h</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>20:00</td>
                     <td class="activity">Dîner</td>
-                    <td><a href="https://wolf.be/bxl/" target="_blank">Wolf Food Market</a></td>
+                    <td><a href="https://wolf.be/bxl/" target="_blank">Wolf Food Market</a><br> Pas de résa</td>
                     <td>2h</td>
                     <td></td>
                 </tr>
@@ -173,7 +244,7 @@
 
 <div class="container activity-box">
         <h3>Karting Mario Kart</h3>
-        <p>Plongez dans une expérience de karting unique en son genre, où la réalité et le jeu vidéo se mélangent pour offrir des sensations fortes et une compétition déchaînée entre amis.</p>
+        <p>Après notre installation à l’appartement, Nous avons opté pour une session de karting inédite ! Yann, qui adore Mario Kart en ce moment, sera surement ravi de découvrir cette fusion entre réalité et jeu vidéo.</p>
         <div class="gallery">
             <img src="img/battle_kart.jpg">
 	    <img src="img/battle_kart2.jpg">
@@ -194,7 +265,7 @@
     </div>
 
     <div class="container activity-box">
-        <h3>Wolf Food Market (impossible de réserver)</h3>
+        <h3>Wolf Food Market</h3>
         <p>Un voyage culinaire à travers 17 stands de nourriture de qualité, allant des pâtes fraîches aux burgers gourmets, en passant par des spécialités asiatiques et une microbrasserie artisanale.</p>
         <div class="gallery">
             <img src="img/wolf1.jpg">
@@ -220,49 +291,48 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>10:00</td>
+                    <td>11:00</td>
                     <td class="activity">Petit-déjeuner entre amis</td>
-		    <td><a href="https://www.wasbar.be/fr/restaurants" target="_blank">WASBAR (réserver une table via le site)</a></td>
+		    <td><a href="https://www.wasbar.be/fr/restaurants" target="_blank">WASBAR</a><br> Réserver une table via le site</td>
                     <td>1h</td>
                     <td>  </td>
                 </tr>
                 <tr>
-                    <td>11:00</td>
+                    <td>12:15</td>
                     <td class="activity">Paintball</td>
-                    <td><a href="https://www.paintball-bw.be/fr" target="_blank">Brabant wallon</a></td>
+                    <td><a href="https://www.paintball-bw.be/fr" target="_blank">Brabant wallon</a><br> Demande de résa effectuée</td>
                     <td>2h</td>
                     <td> 40€ </td>
                 </tr>
                 <tr>
-                    <td>13:30</td>
+                    <td>15:00</td>
                     <td class="activity">Déjeuner</td>
                     <td><a href="http://fritlandbrussels.be/acceuil" target="_blank">Friterie - Fritland</a></td>
                     <td>1h</td>
                     <td>  </td>
                 </tr>
-                <tr>
-                    <td>14:30</td>
-                    <td class="activity">Balade centre de Bruxelles</td>
-                    <td>Bruxelles</td>
-                    <td>1h</td>
-                    <td> / </td>
-                </tr>
-                <tr>
-                    <td>15:30</td>
-                    <td class="activity">Petite gauffre bruxelloise</td>
-                    <td><a href="https://maisondandoy.com/fr/gaufres" target="_blank">Maison Dandoy</a></td>
-                    <td>0h30</td>
-                    <td>  </td>
-                </tr>
-                <tr>
-                    <td>16:00</td>
+		<tr>
+                    <td>16:15</td>
                     <td class="activity">Beer Bike</td>
                     <td><a href="https://www.pubcrawlbrussels.com/barcrawl/bar-crawl/things-to-do-brussels/beer-bike/index_fr.html" target="_blank">Centre de Bruxelles</a></td>
                     <td>1h</td>
-                    <td> 40€ </td>
+                    <td> 37,50€ </td>
                 </tr>
+                <tr>
+                    <td rowspan="2">17:30</td>
+                    <td class="activity">Balade centre de Bruxelles</td>
+                    <td>Bruxelles</td>
+                    <td rowspan="2">1h</td>
+                    <td rowspan="2">  </td>
+                </tr>
+                <tr>
+                    <td class="activity">Petite gauffre bruxelloise</td>
+                    <td><a href="https://maisondandoy.com/fr/gaufres" target="_blank">Maison Dandoy</a></td>
+                   
+                </tr>
+                
                 <tr class="highlight">
-                    <td>17:00</td>
+                    <td>18:30</td>
                     <td class="activity">A déterminer</td>
                     <td>A déterminer</td>
                     <td>?</td>
@@ -298,15 +368,6 @@ En forfait adultes, vous avez la garantie de jouer avec la bille classique de ca
         </div>
     </div>
 
-    <div class="container activity-box">
-        <h3>Les gaufres de Bruxelles</h3>
-        <p>Les gaufres de Liège et de Bruxelles sont de vieilles copines. On chuchote qu’un jour, après une dispute particulièrement sucrée, la gaufre de Liège a tenu à arrondir les angles et celle de Bruxelles s’est faite plus discrète et délicate. Heureusement, nous les avons toutes deux invitées dans nos boutiques pour les réconcilier. Et oui, il y a largement assez de place pour ces deux stars sucrées.</p>
-        <div class="gallery">
-            <img src="img/gauffre.jpg">
-            <img src="img/gauffre2.jpg">
-            <img src="img/gauffre4.jpg">
-        </div>
-    </div>
 <div class="container activity-box">
         <h3>Beer Bike</h3>
         <p>La Belgique étant fameuse pour la bière et ses cyclistes talentueux, c'est l'endroit parfait pour combiner ces deux passions et faire un tour en vélo tout en dégustant une bonne bière,..ou deux, ou trois,..ou plus puisque qu'elle est ILLIMITEE durant le tour! Amenez vos amis pour pédaler et boire des bières dans les rues de Bruxelles, Ghent ou Anvers. Nous avons même installé sur le beer bike une chaîne hifi Bluetooth (pour y jouer votre playlist) et un système de refroidissement - pour être sur que la bière reste à bonne température durant toute la balade!</p>
@@ -316,6 +377,17 @@ En forfait adultes, vous avez la garantie de jouer avec la bille classique de ca
             <img src="img/beer2.jpg">
         </div>
     </div>
+
+    <div class="container activity-box">
+        <h3>Les gaufres de Bruxelles</h3>
+        <p>Les gaufres de Liège et de Bruxelles sont de vieilles copines. On chuchote qu’un jour, après une dispute particulièrement sucrée, la gaufre de Liège a tenu à arrondir les angles et celle de Bruxelles s’est faite plus discrète et délicate. Heureusement, nous les avons toutes deux invitées dans nos boutiques pour les réconcilier. Et oui, il y a largement assez de place pour ces deux stars sucrées.</p>
+        <div class="gallery">
+            <img src="img/gauffre.jpg">
+            <img src="img/gauffre2.jpg">
+            <img src="img/gauffre4.jpg">
+        </div>
+    </div>
+
 
 <div class="container activity-box">
         <h3>Le Becue</h3>
@@ -378,8 +450,11 @@ Grâce à sa carte riche et variée (légumes, poissons, viande, etc.) Le Becue 
         </table>
     </div>
 
-<div class="container">
+<div class="container" style="text-align:center">
+	<h5>Les prix sont indiqués par personne. Il faudra bien sûr ajouter la part de Yann, que l’on invite évidemment !
+	<p><span style="color: orange; font-size: 20px;">⚠️</span> Le planning, les activités et les prix sont indicatifs et peuvent être modifiés avant confirmation finale.</p>
 
+	</h5>
 </div>
 
 
