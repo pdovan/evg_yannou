@@ -143,6 +143,38 @@
     font-weight: bold;
 }
 
+.containerphotos {
+	display: flex;
+	justify-content: center;
+        align-items: center;
+	height: 100vh;
+        background-color: #f0f0f0;
+        overflow: hidden;
+}
+
+
+.photos  {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin:auto;
+}
+
+.photos .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: 10px solid white; /* Ajout d'une bordure blanche */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour effet réaliste */
+    border-radius: 10px; /* Arrondi pour effet photo */
+}
+
+
+.site-content {
+	display: none;
+}
+
 
 @media (max-width: 768px) {
     .planning {
@@ -158,6 +190,23 @@
     </style>
 </head>
 <body>
+
+<div class="containerphotos">
+   <div class=" photos">
+        <img src="img/battle_kart.jpg" class="image" >
+	<img src="img/sneak4.jpg" class="image" >
+	<img src="img/wolf1.jpg" class="image" >
+	<img src="img/was3.jpg" class="image" >
+	<img src="img/paint.jpg" class="image" >
+	<img src="img/beer3.jpg" class="image" >
+	<img src="img/gauffre4.jpg" class="image" >
+	<img src="img/becue.jpg" class="image" >
+	<img src="img/sky.jpg" class="image" >
+    </div>
+</div>
+
+
+<div class="site-content">
     <header>
         <h1>Planning de l'EVG de Yannou</h1>
         <p>Le programme des festivités du Vendredi 30 Mai au 01 Juin</p>
@@ -300,7 +349,7 @@
                 <tr>
                     <td>12:15</td>
                     <td class="activity">Paintball</td>
-                    <td><a href="https://www.paintball-bw.be/fr" target="_blank">Brabant wallon</a><br> Demande de résa effectuée</td>
+                    <td><a href="https://www.paintball-bw.be/fr" target="_blank">Brabant wallon</a><br>Réservation effectuée</td>
                     <td>2h</td>
                     <td> 40€ </td>
                 </tr>
@@ -437,7 +486,7 @@
                 <tr>
                     <td>09:45</td>
                     <td class="activity">Saut en parachute</td>
-                    <td><a href="https://www.skydivemaubeuge.fr/" target="_blank">Skydive Maubeuge</a><br></td>
+                    <td><a href="https://www.skydivemaubeuge.fr/" target="_blank">Skydive Maubeuge</a><br>Réservation en cours</td>
                     <td>4h</td>
                     <td>295€</td>
                 </tr>
@@ -482,6 +531,10 @@
     <footer>
         <p>Organisé par les amis du futur marié &copy; 2025</p>
     </footer>
+
+</div>
+
+
 
 
 <!-- GSAP -->
