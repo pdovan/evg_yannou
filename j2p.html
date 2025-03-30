@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux de piste à travers Bruxelles</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+	    width: 100%;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .planning {
+            width: 100%;
+	    font-size: small;
+            border-collapse: collapse;
+        }
+
+        .planning th, .planning td {
+            padding: 4px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .planning th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .planning tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .activity {
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+
+        .activity-box {
+            background: #eef5ff;
+            padding: 15px;
+            border-left: 5px solid #0056b3;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .gallery img {
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+	.guests-box {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.guests-box h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.guests-box p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.guests-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.guests-list span {
+    background: white;
+    color: #0056b3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.validated {
+            background-color: lightgreen !important;
+        }
+
+.bravo-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+@media (max-width: 768px) {
+    .planning {
+        font-size: 12px;
+    }
+    .gallery img {
+        width: 100%;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="site-content">
+    <header>
+        <h1>Jeux de piste à travers Bruxelles</h1>
+    </header>
+
+<div class="guests-box">
+    <p>Les participants:</p>
+    <div class="guests-list">
+        <span>Yannou (Le futur marié)</span>
+        <span>Benjamin</span>
+        <span>Christophe</span>
+        <span>Freddy</span>
+        <span>Greg</span>
+        <span>Lassad</span>
+        <span>Sébastien</span>
+        <span>Marc</span>
+        <span>Pascal</span>
+        <span>Patrick R.</span>
+        <span>Karim</span>
+        <span>Patrick D.</span>
+    </div>
+</div>
+
+    <div class="container">
+        <h4>Les règles: 2 équipes de 6 personnes devront relever les défis suivants.
+	Il n'y a aucun ordre dans les défis. Il faudra donc s'organiser au mieux pour réussir tous les défis en premier!
+	</h4>
+
+        <table class="planning">
+            <thead>
+                <tr>
+                    <th>Défi</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="activity">Grande Place</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+                <tr>
+                    <td class="activity">Les 3 statues pipi</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+                <tr>
+                    <td class="activity">Photo Hug avec une inconnue</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+                <tr>
+                    <td class="activity">Prendre une bière au Delirium Café</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+                <tr>
+                    <td class="activity">Photo avec une blonde et une brune devant ...</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+                <tr>
+                    <td class="activity">Stadsmuur en Villerstoren</td>
+                    <td><input type="checkbox" class="validate"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div class="container activity-box">
+        <h3>Grande Place</h3>
+        <p>Lieu de départ du jeu de piste. Pour prendre le départ, il faut se faire prendre en photo (l'équipe entière) et envoyer la photo à l'équipe adverse.</p>
+        <div class="gallery">
+            <img src="img/grandeplace.jpg">
+        </div>
+    </div>
+
+    <div class="container activity-box">
+        <h3>Grande Place</h3>
+        <p>Trouver et prendre en photos les 3 statues: Manneken Pis, Jeanneke Pis et Zinneke Pis.</p>
+        <div class="gallery">
+            <img src="img/manneken.jpg">
+	    <img src="img/jeanneke.jpg">
+            <img src="img/zinneke.jpg">
+        </div>
+    </div>
+
+    <div class="container activity-box">
+        <h3>Prendre une bière au Delirium Café</h3>
+        <p>Se rendre dans l'impasse ou se trouve le Delirium Village et prendre une bière au Delirium Café.</p>
+        <div class="gallery">
+            <img src="img/deli.jpg">
+            <img src="img/deli2.jpg">
+        </div>
+    </div>
+<div class="container activity-box">
+        <h3>Stadsmuur en Villerstoren</h3>
+        <p>Se rendre au Stadsmuur en Villerstoren et prendre une photo d'une personne de l'équipe perchée à un des lampadaires.</p>
+        <div class="gallery">
+            <img src="img/stadsmuur.jpg">
+        </div>
+    </div>
+
+    
+
+
+
+    <footer>
+        <p>Organisé par les amis du futur marié &copy; 2025</p>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>	
+<script>
+        function checkAllValidated() {
+            let allChecked = document.querySelectorAll('.validate:checked').length === document.querySelectorAll('.validate').length;
+            if (allChecked) {
+                let bravoMessage = document.createElement('div');
+                bravoMessage.textContent = '🎉 Bravo ! Toutes les défis sont validées ! 🎉';
+                bravoMessage.classList.add('bravo-message');
+                document.body.appendChild(bravoMessage);
+                
+                gsap.fromTo(bravoMessage, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5, ease: "bounce.out", onComplete: () => {
+                    setTimeout(() => {
+                        gsap.to(bravoMessage, { opacity: 0, duration: 1, onComplete: () => bravoMessage.remove() });
+                    }, 2000);
+                }});
+            }
+        }
+
+
+        document.querySelectorAll('.validate').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                let row = this.closest('tr');
+                if (this.checked) {
+                    gsap.to(row, { backgroundColor: "#90EE90", duration: 0.5 });
+                } else {
+                    gsap.to(row, { backgroundColor: "white", duration: 0.5 });
+                }
+                checkAllValidated();
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
