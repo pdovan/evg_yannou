@@ -152,6 +152,11 @@
             z-index: 1000;
         }
 
+.content {
+            opacity: 0; /* Commence avec l'élément invisible */
+            transition: opacity 1s ease-in-out; /* Animation d'apparition */
+        }
+
 @media (max-width: 768px) {
     .planning {
         font-size: 12px;
@@ -167,7 +172,7 @@
 </head>
 <body>
 
-<div class="site-content">
+<div class="content">
     <header>
         <h1>Jeux de piste à travers Bruxelles</h1>
     </header>
@@ -189,6 +194,7 @@
         <span>Patrick D.</span>
     </div>
 </div>
+
 
     <div class="container">
         <h4>Les règles: 2 équipes de 6 personnes devront relever les défis suivants.
@@ -336,6 +342,11 @@
                 checkAllValidated();
             });
         });
+
+        window.onload = function() {
+            // Animer l'apparition du contenu de la page après son chargement
+            gsap.to('.content', { opacity: 1, duration: 0.1, ease: "power2.out" });
+        }
     </script>
 </div>
 </body>
