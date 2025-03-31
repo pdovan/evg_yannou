@@ -18,7 +18,7 @@ images.forEach((img, index) => {
     let randomX = Math.random() * 100 - 50; // Décalage aléatoire sur X
     let randomY = Math.random() * 100 - 50; // Décalage aléatoire sur Y
     let randomRotation = Math.random() * 40 - 40; // Rotation aléatoire entre -40° et 40°
-    
+
     gsap.to(img, {
         opacity: 1,
         x: randomX,
@@ -29,15 +29,15 @@ images.forEach((img, index) => {
         ease: "power2.inOut",
         onComplete: () => {
             if (index === images.length - 1) {
-                setTimeout(() => {
+                // Ajouter un événement de clic sur la dernière image
+                img.addEventListener("click", () => {
                     gsap.to(images, { opacity: 0, duration: 0.8, onComplete: () => {
                         document.querySelector(".containerphotos").style.display = "none";
                         siteContent.style.display = "block";
                         gsap.from(siteContent, { opacity: 0, duration: 1, ease: "power2.inOut" });
                     }});
-                }, 500);
+                });
             }
         }
     });
 });
-
