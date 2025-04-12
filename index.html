@@ -529,7 +529,15 @@ video {
 
 
 <div class="container">
-        <h2>Dimanche 01 Juin</h2>
+	<h2><a href="#" onclick="ouvrirVideo('overlay3')">Dimanche 01 Juin</a></h2>
+	<div class="video-overlay" id="overlay3" onclick="fermerVideo(event, 'overlay3', 'maVideo3')">
+  		<div class="video-container">
+		    <video id="maVideo3" controls>
+		      <source src="video/jour3.mp4" type="video/mp4">
+		      Votre navigateur ne supporte pas la vidéo.
+		    </video>
+		  </div>
+	</div>
 
         <table class="planning">
             <thead>
