@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planning EVG</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
 	html, body {
  	   overflow-x: hidden;
@@ -206,8 +207,32 @@
     }
 }
 
+.video-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
+.video-container {
+    position: relative;
+    width: 400px;
+    max-width: 80%;
+    height: 80%;
+}
 
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
     </style>
 </head>
 <body>
@@ -257,7 +282,15 @@
 </div>
 
     <div class="container">
-        <h2>Vendredi 30 Mai</h2>
+        <h2><a href="#" onclick="ouvrirVideo()">Vendredi 30 Mai</a></h2>
+	<div class="video-overlay" id="overlay" onclick="fermerVideo(event)">
+  		<div class="video-container">
+		    <video id="maVideo" controls>
+		      <source src="video/jour1.mp4" type="video/mp4">
+		      Votre navigateur ne supporte pas la vidéo.
+		    </video>
+		  </div>
+	</div>
 
         <table class="planning">
             <thead>
@@ -601,6 +634,27 @@
 
 
     </script>
+
+<script>
+function ouvrirVideo() {
+  document.getElementById('overlay').style.display = 'flex';
+}
+
+function fermerVideo(e) {
+  // Si on clique en dehors de la vidéo
+  if (!e.target.closest('.video-container')) {
+    document.getElementById('overlay').style.display = 'none';
+    let video = document.getElementById('maVideo');
+    video.pause();        // met en pause
+    video.currentTime = 0; // remet au début
+  }
+}
+
+// Ajout d'événements pour les appareils tactiles sur mobile (touch)
+document.getElementById('overlay').addEventListener('touchstart', function(e) {
+  fermerVideo(e);
+});
+</script>
 
 </body>
 </html>
