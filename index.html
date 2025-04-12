@@ -282,10 +282,10 @@ video {
 </div>
 
     <div class="container">
-        <h2><a href="#" onclick="ouvrirVideo()">Vendredi 30 Mai</a></h2>
-	<div class="video-overlay" id="overlay" onclick="fermerVideo(event)">
+        <h2><a href="#" onclick="ouvrirVideo('overlay1')">Vendredi 30 Mai</a></h2>
+	<div class="video-overlay" id="overlay1" onclick="fermerVideo(event, 'overlay1', 'maVideo1')">
   		<div class="video-container">
-		    <video id="maVideo" controls>
+		    <video id="maVideo1" controls>
 		      <source src="video/jour1.mp4" type="video/mp4">
 		      Votre navigateur ne supporte pas la vidéo.
 		    </video>
@@ -384,7 +384,15 @@ video {
 
     
 <div class="container">
-        <h2>Samedi 31 Mai</h2>
+	<h2><a href="#" onclick="ouvrirVideo('overlay2')">Samedi 31 Mai</a></h2>
+	<div class="video-overlay" id="overlay2" onclick="fermerVideo(event, 'overlay2', 'maVideo2')">
+  		<div class="video-container">
+		    <video id="maVideo2" controls>
+		      <source src="video/jour2.mp4" type="video/mp4">
+		      Votre navigateur ne supporte pas la vidéo.
+		    </video>
+		  </div>
+	</div>
 
         <table class="planning">
             <thead>
@@ -636,15 +644,15 @@ video {
     </script>
 
 <script>
-function ouvrirVideo() {
-  document.getElementById('overlay').style.display = 'flex';
+function ouvrirVideo(overlayId) {
+  document.getElementById(overlayId).style.display = 'flex';
 }
 
-function fermerVideo(e) {
+function fermerVideo(e, overlayId, videoId) {
   // Si on clique en dehors de la vidéo
   if (!e.target.closest('.video-container')) {
-    document.getElementById('overlay').style.display = 'none';
-    let video = document.getElementById('maVideo');
+    document.getElementById(overlayId).style.display = 'none';
+    let video = document.getElementById(videoId);
     video.pause();        // met en pause
     video.currentTime = 0; // remet au début
   }
