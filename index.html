@@ -225,7 +225,7 @@ video {
   border-radius: 15px;
 }
 
-    .fiche-produit {
+.fiche-produit {
       display: flex;
       align-items: flex-start;
       max-width: 900px;
@@ -237,19 +237,10 @@ video {
     }
 
     .fiche-produit img {
-      transition: transform 0.4s ease;
-      transform-origin: center center;
-      cursor: zoom-in;
       max-width: 300px;
-      width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-right: 20px;
-    }
-
-    .fiche-produit img:hover {
-      transform: scale(2);
-      z-index: 10;
     }
 
     .description {
@@ -323,7 +314,7 @@ video {
     .fiche-produit {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
   .fiche-produit img {
@@ -341,7 +332,6 @@ video {
   .description ul {
     padding-left: 0;
     list-style-position: inside;
-    text-align: center;
   }
 }
 
@@ -802,10 +792,7 @@ function fermerVideo(e, overlayId, videoId) {
   }
 }
 
-// Ajout d'événements pour les appareils tactiles sur mobile (touch)
-document.getElementById('overlay').addEventListener('touchstart', function(e) {
-  fermerVideo(e);
-});
+
 </script>
 
  <script>
