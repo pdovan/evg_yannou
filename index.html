@@ -198,15 +198,6 @@
             border-radius: 8px;
         }
 
-@media (max-width: 768px) {
-    .planning {
-        font-size: 12px;
-    }
-    .gallery img {
-        width: 100%;
-    }
-}
-
 .video-overlay {
   display: none;
   position: fixed;
@@ -233,7 +224,119 @@ video {
   display: block;
   border-radius: 15px;
 }
-    </style>
+
+.fiche-produit {
+      display: flex;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fdfdfd;
+    }
+
+    .fiche-produit img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .description {
+      flex: 1;
+      font-size: 0.8em;
+      line-height: 1.2;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .prix {
+      font-size: 1.6em;
+      color: #e60000;
+      margin: 10px 0;
+    }
+
+    .stock {
+      font-weight: bold;
+      color: #ff9900;
+      margin-bottom: 10px;
+    }
+
+    .btn-achat {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white; 
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-achat:hover {
+      background-color: #0056b3;
+      border-color: white;
+    }
+
+    /* Message centré */
+    .message-fun {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #e6ffe6;
+      border: 2px solid #00cc66;
+      padding: 20px 30px;
+      font-size: 0.8em;
+      color: #006633;
+      border-radius: 10px;
+      display: none;
+      z-index: 999;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+@media (max-width: 768px) {
+    .planning {
+        font-size: 12px;
+    }
+    .gallery img {
+        width: 100%;
+    }
+
+    .fiche-produit {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fiche-produit img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 90%;
+    height: auto;
+  }
+
+  .description {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .description ul {
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: center;
+  }
+}
+
+</style>
 </head>
 <body>
 
@@ -261,6 +364,30 @@ video {
         <h1>Planning de l'EVG de Yannou</h1>
         <p>Le programme des festivités du Vendredi 30 Mai au 01 Juin</p>
     </header>
+
+
+<div class="fiche-produit">
+    <img src="img/yannou.png" alt="Starter Pack du Futur Marié">
+    <div class="description">
+      <h2>🔥 Starter Pack du Futur Marié 🔥</h2>
+      <p>
+        Le kit de survie ultime pour ton pote qui va dire "oui" mais qui restera toujours fidèle à ses premières amours :
+        <ul>
+          <li>⚽ Le PSG (même en Ligue des Champions, on y croit !)</li>
+          <li>🎮 La PlayStation (manette en main, skill en or)</li>
+          <li>🏀 Le basket (parce que dunker sur la vie, c’est important)</li>
+        </ul>
+        Un pack blindé de fun, à consommer sans modération pendant l’EVG.
+      </p>
+      <div class="prix">49,90 €</div>
+      <div class="stock">⚠️ Édition limitée: plus que 7 en stock !</div>
+      <button class="btn-achat" onclick="afficherMessage()">Je prends ce bijou 🔥</button>
+    </div>
+  </div>
+<div class="message-fun" id="messageFun">
+    💥 Bravo ! Tu viens de faire le meilleur choix depuis sa demande en mariage.
+  </div>
+  
 
 <div class="guests-box">
     <h3>🎉 Invités 🎉</h3>
@@ -671,6 +798,30 @@ document.getElementById('overlay').addEventListener('touchstart', function(e) {
   fermerVideo(e);
 });
 </script>
+
+ <script>
+    function afficherMessage() {
+      const message = document.getElementById('messageFun');
+      message.style.display = 'block';
+
+      gsap.fromTo(message,
+        { opacity: 0, scale: 0.5 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
+      );
+
+      setTimeout(() => {
+        gsap.to(message, {
+          opacity: 0,
+          scale: 0.5,
+          duration: 0.5,
+          ease: "power1.in",
+          onComplete: () => {
+            message.style.display = 'none';
+          }
+        });
+      }, 2000);
+    }
+  </script>
 
 </body>
 </html>
