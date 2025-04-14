@@ -792,6 +792,9 @@ function ouvrirVideo(overlayId, videoId) {
   video.currentTime = 0; // remet au début
   if(videoId == 'maVideo4') {
      video.playbackRate = 0.8;
+     video.addEventListener('ended', () => {
+       document.getElementById(overlayId).style.display = 'none';
+    });
   }
   video.play();
 }
