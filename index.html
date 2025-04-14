@@ -366,7 +366,15 @@ video {
 
 
 <div class="fiche-produit">
-    <img src="img/yannou.png" alt="Starter Pack du Futur Marié">
+    <a href="#" onclick="ouvrirVideo('overlay4', 'maVideo4')"><img src="img/yannou.png" alt="Starter Pack du Futur Marié"></a>
+    <div class="video-overlay" id="overlay4" onclick="fermerVideo(event, 'overlay4', 'maVideo4')">
+       <div class="video-container">
+	  <video id="maVideo4" controls>
+	    <source src="video/yannou.mp4" type="video/mp4">
+	    Votre navigateur ne supporte pas la vidéo.
+	  </video>
+       </div>
+    </div>
     <div class="description">
       <h2>🔥 Starter Pack du Futur Marié 🔥</h2>
       <p>
@@ -408,7 +416,7 @@ video {
 </div>
 
     <div class="container">
-        <h2><a href="#" onclick="ouvrirVideo('overlay1')">Vendredi 30 Mai</a></h2>
+        <h2><a href="#" onclick="ouvrirVideo('overlay1', 'maVideo1')">Vendredi 30 Mai</a></h2>
 	<div class="video-overlay" id="overlay1" onclick="fermerVideo(event, 'overlay1', 'maVideo1')">
   		<div class="video-container">
 		    <video id="maVideo1" controls>
@@ -510,7 +518,7 @@ video {
 
     
 <div class="container">
-	<h2><a href="#" onclick="ouvrirVideo('overlay2')">Samedi 31 Mai</a></h2>
+	<h2><a href="#" onclick="ouvrirVideo('overlay2', 'maVideo2')">Samedi 31 Mai</a></h2>
 	<div class="video-overlay" id="overlay2" onclick="fermerVideo(event, 'overlay2', 'maVideo2')">
   		<div class="video-container">
 		    <video id="maVideo2" controls>
@@ -655,7 +663,7 @@ video {
 
 
 <div class="container">
-	<h2><a href="#" onclick="ouvrirVideo('overlay3')">Dimanche 01 Juin</a></h2>
+	<h2><a href="#" onclick="ouvrirVideo('overlay3', 'maVideo3')">Dimanche 01 Juin</a></h2>
 	<div class="video-overlay" id="overlay3" onclick="fermerVideo(event, 'overlay3', 'maVideo3')">
   		<div class="video-container">
 		    <video id="maVideo3" controls>
@@ -778,8 +786,14 @@ video {
     </script>
 
 <script>
-function ouvrirVideo(overlayId) {
+function ouvrirVideo(overlayId, videoId) {
   document.getElementById(overlayId).style.display = 'flex';
+  let video = document.getElementById(videoId);
+  video.currentTime = 0; // remet au début
+  if(videoId == 'maVideo4') {
+     video.playbackRate = 0.8;
+  }
+  video.play();
 }
 
 function fermerVideo(e, overlayId, videoId) {
