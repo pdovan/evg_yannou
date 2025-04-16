@@ -285,24 +285,7 @@ video {
       border-color: white;
     }
 
-    /* Message centré */
-    .message-fun {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #e6ffe6;
-      border: 2px solid #00cc66;
-      padding: 20px 30px;
-      font-size: 0.8em;
-      color: #006633;
-      border-radius: 10px;
-      display: none;
-      z-index: 999;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
+   
 @media (max-width: 768px) {
     .planning {
         font-size: 12px;
@@ -388,12 +371,20 @@ video {
       </p>
       <div class="prix">49,90 €</div>
       <div class="stock">⚠️ Édition limitée: plus que 7 en stock !</div>
-      <button class="btn-achat" onclick="afficherMessage()">Je prends ce bijou 🔥</button>
+      <button class="btn-achat" onclick="ouvrirVideo('overlay5', 'maVideo5')">Je prends ce bijou 🔥</button>
+
+    <div class="video-overlay" id="overlay5" onclick="fermerVideo(event, 'overlay5', 'maVideo5')">
+       <div class="video-container">
+	  <video id="maVideo5" controls>
+	    <source src="video/yannou2.mp4" type="video/mp4">
+	    Votre navigateur ne supporte pas la vidéo.
+	  </video>
+       </div>
+    </div>
+
     </div>
   </div>
-<div class="message-fun" id="messageFun">
-    💥 Bravo ! Tu viens de faire le meilleur choix depuis sa demande en mariage.
-  </div>
+
   
 
 <div class="guests-box">
@@ -812,29 +803,6 @@ function fermerVideo(e, overlayId, videoId) {
 
 </script>
 
- <script>
-    function afficherMessage() {
-      const message = document.getElementById('messageFun');
-      message.style.display = 'block';
-
-      gsap.fromTo(message,
-        { opacity: 0, scale: 0.5 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
-      );
-
-      setTimeout(() => {
-        gsap.to(message, {
-          opacity: 0,
-          scale: 0.5,
-          duration: 0.5,
-          ease: "power1.in",
-          onComplete: () => {
-            message.style.display = 'none';
-          }
-        });
-      }, 2000);
-    }
-  </script>
 
 </body>
 </html>
